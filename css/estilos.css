@@ -11,8 +11,8 @@ form {
   input[type="button"].arit{
 		background-color:maroon;
   }
-  input[type="button"].clear{
-    background-color:orangered;
+  input[type="reset"].clear{
+    background-color:rgb(8, 167, 35);
   }
   input[type=textfield] {
       width: 75%;
