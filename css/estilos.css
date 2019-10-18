@@ -32,5 +32,5 @@ form {
   }
   input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
     /* background-color: #333; */
-    background-color: rgb(10, 10, 10);
+    background-color: rgb(51, 10, 199); /*evento*/
   }
