@@ -11,19 +11,20 @@ function deletecarac(){
 }
 
 function escribir(n){
-    var caja2 = document.f1.txtcaja2.value;
+    var caja2 = document.calcular.ans.value;
+    // "document.calculator.ans.value+='1'"
     if (borrar) {
         //alert("se borro");
-        document.f1.txtcaja2.value="";
+        document.calcular.ans.value="";
         borrar = false;
-        document.f1.txtcaja2.value = n;
+        document.calcular.ans.value = n;
     }
     else if (caja2 == "0" && n != "."){
         cajao = caja2.replace("0", "")
-        document.f1.txtcaja2.value = cajao + n;
+        document.calcular.ans.value = cajao + n;
     }
     else{
-        document.f1.txtcaja2.value = caja2 + n;
+        document.calcular.ans.value = caja2 + n;
     }
 }
 function raiz(){

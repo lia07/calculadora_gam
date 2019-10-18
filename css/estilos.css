@@ -10,7 +10,10 @@ form {
 
   input[type="button"].arit{
 		background-color:maroon;
-	}
+  }
+  input[type="button"].clear{
+    background-color:orangered;
+  }
   input[type=textfield] {
       width: 75%;
       padding: 16px 32px;

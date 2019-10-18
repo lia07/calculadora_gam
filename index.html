@@ -10,8 +10,8 @@
 	  <div class="calculadora">
 	    <form name="calculadora">
 	            <h3>Calculadora <a href="#"></a></h3>
-	            <p>Calcular</p>
-	    <input type="textfield" name="ans" value="">
+	            <p>...</p>
+	    <input  placeholder="Ingrese datos" type="textfield" name="ans" value="">
 	    <br>
       <input type="button" value="1" onClick="document.calculator.ans.value+='1'">
 	    <input type="button" value="2" onClick="document.calculator.ans.value+='2'">
@@ -29,7 +29,7 @@
         <input type="button" class="arit" value="*" onClick="document.calculator.ans.value+='*'">
 	    <br>
 	  <input type="button" value="0" onClick="document.calculator.ans.value+='0'">
-	    <input type="reset" value="CE">
+	    <input type="reset" class="clear" onClick="document.calculator.ans.value='CE'" value="CE">
 	    <input type="button" class="arit" value="/" onClick="document.calculator.ans.value+='/'">
 	    <input type="button" class="arit" value="=" onClick="document.calculator.ans.value=eval(document.calculator.ans.value)">
     </form>
