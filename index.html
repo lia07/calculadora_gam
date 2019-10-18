@@ -10,49 +10,81 @@
 	  <div class="calculadora">
 	    <form name="calculadora">
 	            <h3>Calculadora <a href="#"></a></h3>
-	            <p>...</p>
-	    <input  placeholder="Ingrese datos" type="textfield" name="ans" value="">
+	            <p>vss</p>
+	    <input  placeholder="Ingrese datos" type="textfield" name="ans" value="" id="lcd">
 	    <br>
-      <input type="button" value="1" onClick="document.calculator.ans.value+='1'">
-	    <input type="button" value="2" onClick="document.calculator.ans.value+='2'">
-	    <input type="button" value="3" onClick="document.calculator.ans.value+='3'">
-	    <input type="button" class="arit" value="+" onClick="document.calculator.ans.value+='+'">
+      <input type="button" value="1" onClick="mostrar(1)">
+	    <input type="button" value="2" onClick="mostrar(2)">
+	    <input type="button" value="3" onClick="mostrar(3)">
+	    <input type="button" class="arit" value="+" onClick="obtenerOperador('suma')">
 	    <br>
-	  <input type="button" value="4" onClick="document.calculator.ans.value+='4'">
-	    <input type="button" value="5" onClick="document.calculator.ans.value+='5'">
-	    <input type="button" value="6" onClick="document.calculator.ans.value+='6'">
-	    <input type="button" class="arit" value="-" onClick="document.calculator.ans.value+='-'">
+	  <input type="button" value="4" onClick="mostrar(4)">
+	    <input type="button" value="5" onClick="mostrar(5)">
+	    <input type="button" value="6" onClick="mostrar(6)">
+	    <input type="button" class="arit" value="-" onClick="obtenerOperador('resta')">
 	    <br>
-	  <input type="button" value="7" onClick="document.calculator.ans.value+='7'">
-	    <input type="button" value="8" onClick="document.calculator.ans.value+='8'">
-	    <input type="button" value="9" onClick="document.calculator.ans.value+='9'">
-        <input type="button" class="arit" value="*" onClick="document.calculator.ans.value+='*'">
+	  <input type="button" value="7" onClick="mostrar(7)">
+	    <input type="button" value="8" onClick="mostrar(8)">
+	    <input type="button" value="9" onClick="mostrar(9)">
+        <input type="button" class="arit" value="*" onClick="obtenerOperador('multiplicacion')">
 	    <br>
-	  <input type="button" value="0" onClick="document.calculator.ans.value+='0'">
-	    <input type="reset" class="clear" onClick="document.calculator.ans.value='CE'" value="CE">
-	    <input type="button" class="arit" value="/" onClick="document.calculator.ans.value+='/'">
-	    <input type="button" class="arit" value="=" onClick="document.calculator.ans.value=eval(document.calculator.ans.value)">
+	  <input type="button" value="0" onClick="mostrar(0)">
+	    <input type="reset" class="clear" onClick="borrarPantalla" value="CE">
+	    <input type="button" class="arit" value="/" onClick="obtenerOperador('division')">
+	    <input type="button" class="arit" value="=" onClick="calcular()">
     </form>
   </div>	  
- <script>
-    var resultado=0; 
+	<script >
+		var pantalla ='';
+		var resultado = '0';
+		var operador = '';
+		var numero1 = 0;
+		var numero2 = 0;
+		function mostrar(valor){
+			pantalla = pantalla + valor;
+			document.getElementById('lcd').value = pantalla;
+		}
+		function obtenerOperador(operacion){
+			numero1=document.getElementById('lcd').value; 
+			operador = operacion;
+			//borrarPantalla();
+			document.getElementById('lcd').value = '';
+			pantalla ='';
+		}
+		function calcular(){
+			//numero1 = document.getElementById('lcd').value;
+			numero2 = document.getElementById('lcd').value;
+		
+			switch(operador){
+				case 'suma':
+					resultado=parseInt(numero1) + parseInt(numero2);
+					document.getElementById('lcd').value = resultado;
+					break;
+				case 'resta':
+					resultado=parseInt(numero1) - parseInt(numero2);
+					document.getElementById('lcd').value = resultado;
+					break;
+				case 'multiplicacion':
+					resultado=parseInt(numero1) * parseInt(numero2);
+					document.getElementById('lcd').value = resultado;
+					break;
+				case 'division':
+					resultado=parseInt(numero1) / parseInt(numero2);
+					document.getElementById('lcd').value = resultado;
+					break;
+			}
+		}
+		function borrarPantalla(){
+			document.getElementById('lcd').value = '';
+			numero2=0;
+			numero1=0;
+			resultado=0;
+			operador='';
+			pantalla='';
+		}
+		// function sumar(){
 
-	    function sumar(){
-	      //todo
-	    }
-	
-	    function restar(){
-      //todo
-	    }
-	
-	    function multiplicar(){
-	      //todo
-	    }
-	
-	    function dividir(){
-	      //todo
-	    }    //Otras funciones que se necesite
-	  </script>
-	  <script src="js/funciones.js"></script>	
+		// }
+	</script>
 	</body>
 	</html>

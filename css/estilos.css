@@ -27,7 +27,7 @@ form {
       background: #ccc;
   }
   input[type=button], input[type=submit], input[type=reset] {
-      background-color: rgb(53, 154, 236);
+      background-color: rgb(138, 53, 236);
       border: none;
       color: white;
       padding: 16px 32px;
