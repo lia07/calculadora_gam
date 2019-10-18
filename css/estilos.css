@@ -7,6 +7,10 @@ form {
     margin: auto;
     background: #fafafa;
   }
+
+  input[type="button"].arit{
+		background-color:maroon;
+	}
   input[type=textfield] {
       width: 75%;
       padding: 16px 32px;
